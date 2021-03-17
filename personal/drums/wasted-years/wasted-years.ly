@@ -1,8 +1,11 @@
-\version "2.20.0"
+\version "2.22.0"
 \include "english.ly"
 
 \header {
   title = "Wasted Years"
+  composer = \markup {
+    \epsfile #X #25 "../common/legend.eps"
+  }
   tagline = ##f
 }
 
@@ -16,7 +19,7 @@
   right-margin = 0.75\in
 }
 
-\include "../hldrums.ly"
+\include "../common/hldrums.ly"
 
 %{ hi-hat riff 1 %}
 hhRiffOne = \drummode {
@@ -67,10 +70,6 @@ introVTwo = \drummode {
   bd4 r bd r8 bd |
   bd4 s2. | s2 r8 bd r4 |
 }
-
-
-
-
 
 one = { \introVOne }
 two = { \introVTwo }

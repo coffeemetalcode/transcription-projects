@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.22.0"
 
 \header {
   title = "Run to the Hills - snippets"
@@ -15,7 +15,7 @@
   right-margin = 0.75\in
 }
 
-\include "../hldrums.ly"
+\include "../common/hldrums.ly"
 
 %{ #(define hldrums '(
                     (bassdrum		    default	#f           -3)

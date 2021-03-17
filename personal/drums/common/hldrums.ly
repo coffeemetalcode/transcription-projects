@@ -9,4 +9,4 @@
                     (snare			    default #f            1)
                     (lowtom         default #f           -1)
                     (bassdrum		    default	#f           -3)
-                    (pedalhihat     xcircle "stopped"    -5)))
+                    (pedalhihat     cross   #f           -5)))
