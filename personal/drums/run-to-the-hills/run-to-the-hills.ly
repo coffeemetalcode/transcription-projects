@@ -15,16 +15,18 @@
   right-margin = 0.75\in
 }
 
-#(define hldrums '(
-         (bassdrum		default		#f          -3)
-         (snare			default   	#f           1)
-         (hihat			cross     	#f           4)
-         (halfopenhihat		cross     	"halfopen"   4)
-         (openhihat	   	cross     	"open"       4)
-         (pedalhihat      	xcircle   	"stopped"   -4)
-         (hightom		default		#f	     3)
-         (hightmidtom		default		#f	     2)
-         (lowtom          	default   	#f          -1)))
+\include "../hldrums.ly"
+
+%{ #(define hldrums '(
+                    (bassdrum		    default	#f           -3)
+                    (snare			    default #f            1)
+                    (hihat			    cross   #f            4)
+                    (halfopenhihat  cross   "halfopen"    4)
+                    (openhihat	   	cross   "open"        4)
+                    (pedalhihat     xcircle "stopped"    -4)
+                    (hightom		    default #f            3)
+                    (hightmidtom		default #f	          2)
+                    (lowtom         default #f           -1))) %}
 
 intro = \drummode {
   \bar ".|:" <bd hh>16^\markup { \bold Intro } hh hh hh <bd hh>16 hh hh hh <bd hh>16 hh hh hh <bd hho>8 tomfh |

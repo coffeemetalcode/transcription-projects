@@ -1,7 +1,8 @@
 \version "2.20.0"
+\include "english.ly"
 
 \header {
-  title = "Wasted Years - snippets"
+  title = "Wasted Years"
   tagline = ##f
 }
 
@@ -15,51 +16,61 @@
   right-margin = 0.75\in
 }
 
-#(define hldrums '(
-                    (bassdrum	  	  default		#f         -3)
-                    (snare			    default   #f          1)
-                    (hihat          cross     #f          4)
-                    (halfopenhihat  cross     "halfopen"  4)
-                    (openhihat	   	cross     "open"      4)
-                    (pedalhihat     xcircle   "stopped"  -4)
-                    (hightom        default		#f	        3)
-                    (hightmidtom		default		#f	        2)
-                    (lowtom         default   #f         -1)))
+\include "../hldrums.ly"
+
+%{ hi-hat riff 1 %}
+hhRiffOne = \drummode {
+  hhho16 hh hh hh hh hh hhho hh
+  hh hh hh hh hhho hh hh hh |
+  hh hh hhho hh hh hh hh hh
+  hhho hh hh hh hhho hh hh hh |
+}
 
 introVOne = \drummode {
-  hhho16^\markup { \bold Intro } hh hh hh hh hh hhho hh
+  % \repeat unfold 2 { \hhRiffOne }
+  \hhRiffOne
+
+  hhho16 hh hh hh hh hh hhho hh
+  hh hh hh hh hhho hh hh hh |
+  hh hh hhho hh hh hh hh hh
+  hhho hh hh hh hhho8 hhho |
+
+  cymc4 hh16 hh hhho hh
+  hh hh hh hh hhho hh hh hh |
+  hh hh hhho hh hh hh hh hh
+  hhho hh hh hh hhho hh hh hh |
+
+  hhho16 hh hh hh hh hh hhho hh
+  hh hh hh hh hhho hh hh hh |
+  hh hh hhho hh hh hh hh hh
+  hhho hh hh hh cymc4 |
+
+  \hhRiffOne
+
+  hhho16 hh hh hh hh hh hhho hh
+  hh hh hh hh hhho8 cymc |
+
+  cymc4 r2. | r2. sn4^"flam" | \bar "||"
 }
 
 introVTwo = \drummode {
-  r4 bd
+  r4^\markup { \bold Intro } bd r bd |
+  r4 bd r bd |
+  r4 bd r bd |
+  r4 bd r2 |
+  bd4 bd r bd |
+  r4 bd r bd |
+  r4 bd r bd |
+  r4 bd r bd |
+  bd4 r bd r |
+  bd4 r bd r |
+  bd4 r bd r8 bd |
+  bd4 s2. | s2 r8 bd r4 |
 }
 
-verseVOne = \drummode {
-  \tuplet 3/2 { <bd cymc>8 q q } r4^\markup { \bold Faster } r sn4^"flam" \bar "||" |
-  <bd hh>16^\markup { \bold Verse } hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  \bar ".|:" <bd cymc>4 <bd sn>16 hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh \bar ":|.|:" |
-}
 
-verseVTwo = \drummode {
 
-}
 
-chorusVOne = \drummode {
-  <bd cymc>4^\markup { \bold Chorus } <bd sn>16 hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh | \break
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd sn>8 sn16 sn <bd cymc>4 <bd sn>8 sn16 sn <bd cymc>4 | \break
-  <bd cymc>4 <bd sn>16 hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh | \break
-  <bd hh>16 hh hh hh <bd sn> hh hh hh <bd hh> hh hh hh <bd sn> hh hh hh |
-  <bd sn>16 sn sn sn <bd tomh> tomh tomh tomh <bd tommh> tommh tommh tommh <bd toml> toml toml toml \bar ":|." |
-}
-
-chorusVTwo = \drummode {
-
-}
 
 one = { \introVOne }
 two = { \introVTwo }
