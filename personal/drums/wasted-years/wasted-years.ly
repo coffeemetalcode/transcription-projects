@@ -161,12 +161,27 @@ verseOneLyrics = \lyricmode {
   things4 I8 some8 -- times4 do,4 |
   2 8 it8 is -- nʼt |
   me8 but4 some8 -- one4 else. |
-  2 4. "2. I"8 |
+  " "1 % to fix placement of ending brackets
 }
 
 verseTwoLyrics = \lyricmode {
   \repeat unfold 13 { 1 | }
   close4 my8 eyes8 2 |
+  2. and4 |
+  think4 of8 home.8 2 |
+  2 8 An -- oth -- er |
+  cit8 -- y8 rolls4 by2 |
+  2 in4 the8 night. |
+  1 |
+  2. Ainʼt8 it |
+  fun8 -- ny8 how8 it8 is?2 |
+  2 8 You nev -- er |
+  miss8 it ʼtil itʼs gone4 a8 -- way. |
+  2. And8 my |
+  heart4 is8 ly -- ing4 there, |
+  2 8 and will be |
+  ʼtil4 my8 dy -- ing4 day |
+  2 4. "2. I"8 | % not sure about this...
 }
 
 \score {
