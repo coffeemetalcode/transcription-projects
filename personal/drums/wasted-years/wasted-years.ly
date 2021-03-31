@@ -7,8 +7,7 @@
      (set-global-fonts
       #:roman "Times LT Std"
       #:sans "Helvetica LT Std"
-      #:typewriter "Fira Sans"
-      ))
+      #:typewriter "Fira Sans"))
   ragged-bottom = ##f
   ragged-last-bottom = ##f
   top-margin = 0.75\in
@@ -34,8 +33,8 @@
   title = "Wasted Years"
   composer = "Words and Music by Adrian Smith"
   arranger = \markup {
-    \with-dimensions #'(0 . 35) #'(0 . 12.75)
-    \epsfile #X #35 "../common/legend.eps"
+    \with-dimensions #'(0 . 40) #'(0 . 20)
+    \epsfile #X #40 "../common/legend.eps"
   }
   tagline = ##f
 }
@@ -79,7 +78,9 @@ introVOne = \drummode {
 }
 
 introVTwo = \drummode {
-  \mark \markup { \bold Intro }
+  \once \override Score.RehearsalMark.outside-staff-horizontal-padding = #5
+  % \once \override RehearsalMark.font-size = -10
+  \mark \default %{ \markup { \bold Intro } %}
   r4 bd r bd |
   r4 bd r bd |
   r4 bd r bd |
@@ -120,6 +121,7 @@ verseVOne = \drummode {
 
 verseVTwo = \drummode {
   %% Verse marking should be above the lyrics
+  \once \override Staff.RehearsalMark.outside-staff-horizontal-padding = #1
   \mark \markup { \bold Verse } 
   bd4 bd bd bd |
   bd4 bd bd bd |
