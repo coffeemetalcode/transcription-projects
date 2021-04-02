@@ -1,7 +1,7 @@
 \version "2.22.0"
 \include "english.ly"
 
-\include "number-of-the-beast-notes.ly"
+\include "number-of-the-beast-drums-notes.ly"
 
 \paper {
   #(set-paper-size "letter")
@@ -36,17 +36,19 @@
   composer = "Words and Music by Bruce Dickenson?"
   arranger = \markup {
     \with-dimensions #'(0 . 40) #'(0 . 20)
-    \epsfile #X #40 "../common/legend.eps"
+    \epsfile #X #40 "../../../../common/img/eps/legend.eps"
   }
   tagline = ##f
 }
 
-\include "../common/hldrums.ly"
+\include "../../../../common/ly/hldrums.ly"
 
 \score {
   % \override Score.RehearsalMark.outside-staff-horizontal-padding = #5
   <<
+    \set Score.doubleRepeatType = #":|.|:"
     \override Score.LyricText.font-size = #-1
+    \override Score.RehearsalMark.font-size = #-1
     % \new Lyrics { \verseOneLyrics }
     % \new Lyrics { \verseTwoLyrics }
     \new DrumStaff <<

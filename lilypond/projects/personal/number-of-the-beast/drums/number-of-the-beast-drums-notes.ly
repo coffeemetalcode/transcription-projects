@@ -27,13 +27,15 @@ interludeOneFeet = \drummode {
 
 gSoloOneHands = \drummode {
   \repeat volta 4 {
+    \once
+    \override Score.RehearsalMark #'self-alignment-X = #LEFT
     \mark \markup { \bold "Guitar Solo 1" }
     r4 <sn hh> r <sn hh> |
     hh4 <sn hh> hh8 sn sn cymc |
     r4 <sn hh> r <sn hh> |
   } \alternative {
     { hh4 <sn hh> hh8 sn sn cymc | }
-    { hh4 <sn hh> sn8 sn sn sn | }
+    { hh4 <sn hh> sn8 sn sn sn | \bar "||"}
   }
 }
 
@@ -48,6 +50,8 @@ gSoloOneFeet = \drummode {
 %% Interlude Two
 
 interludeTwoHands = \drummode {
+  \once
+  \override Score.RehearsalMark #'self-alignment-X = #LEFT
   \mark \markup { \bold "Interlude 2" }
   \oneVoice R1 |
   r2 \voiceOne tomh8 tomh tomh tomh |
@@ -71,6 +75,8 @@ interludeTwoFeet = \drummode {
 
 gSoloTwoHands = \drummode {
   \repeat volta 4 {
+    \once
+    \override Score.RehearsalMark #'self-alignment-X = #LEFT
     \mark \markup { \bold "Guitar Solo 2" }
     \repeat unfold 2 {
       r4 <sn hh> hh sn8 cymc |
