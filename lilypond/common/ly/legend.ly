@@ -25,7 +25,7 @@
 
 legend = \drummode {
   \time 2/4
-  <hhp bd toml sn tomh hh>4 <tommh cymr cymc>
+  <hhp bd toml sn tomh hh>4 <ss tommh cymr cymc>
 }
 
 \score {
