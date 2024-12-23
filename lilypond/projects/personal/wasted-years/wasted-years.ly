@@ -1,13 +1,13 @@
-\version "2.22.0"
+\version "2.24.3"
 \include "english.ly"
 
 \paper {
   #(set-paper-size "letter")
   #(define fonts
-     (set-global-fonts
-      #:roman "Times LT Std"
-      #:sans "Helvetica LT Std"
-      #:typewriter "Fira Sans"))
+    (set-global-fonts
+    #:roman "Times LT Std"
+    #:sans "Helvetica LT Std"
+    #:typewriter "Fira Sans"))
   ragged-bottom = ##f
   ragged-last-bottom = ##f
   top-margin = 0.75\in
@@ -32,14 +32,14 @@
 \header {
   title = "Wasted Years"
   composer = "Words and Music by Adrian Smith"
-  arranger = \markup {
-    \with-dimensions #'(0 . 40) #'(0 . 20)
-    \epsfile #X #40 "../common/legend.eps"
-  }
+  % arranger = \markup {
+  %   \with-dimensions #'(0 . 40) #'(0 . 20)
+  %   \epsfile #X #40 "../../../common/img/eps/legend.eps"
+  % }
   tagline = ##f
 }
 
-\include "../common/hldrums.ly"
+\include "../../../common/ly/hldrums.ly"
 
 %{ hi-hat riff 1 %}
 hhRiffOne = \drummode {
