@@ -1,6 +1,8 @@
 % Lily was here -- automatically converted by midi2ly from elenor-rigby.mid
 \version "2.24.3"
 
+\include "../../../../common/ly/hldrums.ly"
+
 \layout {
   \context {
     \Voice
@@ -274,10 +276,12 @@ trackB = <<
 
 
 \score {
-  <<
+  \new DrumStaff <<
+    \set DrumStaff.drumStyleTable = #(alist->hash-table hldrums)
+    \set DrumStaff.drumPitchTable = #(alist->hash-table midiDrumPitches)
     \context Staff=trackB \trackA
     \context Staff=trackB \trackB
   >>
   \layout {}
-  \midi {}
+  % \midi {}
 }

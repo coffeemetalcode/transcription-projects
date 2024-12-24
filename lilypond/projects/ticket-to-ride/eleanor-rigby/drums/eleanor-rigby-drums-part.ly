@@ -34,27 +34,32 @@
 \header {
   title = "Eleanor Rigby"
   composer = "Words and Music Paul McCartney and John Lennon"
-  arranger = \markup {
-    \with-dimensions #'(0 . 40) #'(0 . 20)
-    \epsfile #X #40 "../../../../common/img/eps/legend.eps"
-  }
   tagline = ##f
 }
-
-% This level of traversal is not really sustainable
-\include "../../../../common/ly/hldrums.ly"
 
 \score {
   \new DrumStaff <<
     \numericTimeSignature
-    \set DrumStaff.drumStyleTable = #(alist->hash-table hldrums)
+    \set DrumStaff.drumStyleTable = #weinberg-drums-style
     \new DrumVoice {
       \override Beam.concaveness = #10000
-      \intro
-      \verseOne
-      \chorusOne
-      \verseTwo
-      \chorusTwo
+      \introHands
+      \verseOneHands
+      \chorusOneHands
+      \verseTwoHands
+      \chorusTwoHands
+      \interludeHands
+      \verseThreeHands
+    }
+    \new DrumVoice {
+      \override Beam.concaveness = #10000
+      \introFeet
+      \verseOneFeet
+      \chorusOneFeet
+      \verseTwoFeet
+      \chorusTwoFeet
+      \interludeFeet
+      \verseThreeFeet
     }
   >>
 }
